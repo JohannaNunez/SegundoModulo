@@ -1,0 +1,41 @@
+<h1>Objetos en Js</h1>
+<script>
+
+	//function crearProducto(){}
+	const crearProducto = function(n,p,s,d) {//RECIBE DATOS //proceso en que meto los 4 datos - fabrique producto - devuelva
+	let elProducto = new Object()  // Objeto diferido
+	elProducto.nombre = n // lo que entra en n, se guarda en nombre
+	elProducto.stock = s // lo que entra en s, se guarda en stock
+	elProducto.precio = p // lo que entra en p, se guarda en precio
+	elProducto.disponible= d // lo que entra en d, se guarda en disponible
+
+	return elProducto
+	}
+
+/////////////////////////////
+	// variables
+	let nombre = "Café torrado"
+	let stock = 600
+	let precio = 85.65
+	let disponible = false
+
+	//array
+	let unProducto  = ["Jugo de naranja", 450, 15.45, true]
+	//Objetos
+	let otroProducto = { // Objeto literal
+		nombre : "Agua finamente gasificada",
+		stock : 100,
+		precio : 175.60,
+		disponible : true
+	}
+	let tercerProducto = new Object()  // Objeto diferido
+	tercerProducto.nombre = "Alfajor de dulce de leche"
+	tercerProducto.stock = 150
+	tercerProducto.precio = 65.30
+	tercerProducto.disponible= false
+
+	let ultimoProducto = crearProducto("Te rojo", 74.25, 900, true)
+
+	document.write(`El producto ${tercerProducto.nombre} vale ARS ${tercerProducto.precio} c/ u`)
+
+</script>

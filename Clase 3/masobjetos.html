@@ -1,14 +1,14 @@
 <h1> De Object a Objetos - La venganza de AJAX</h1>
 <script>
 	const ajax = new XMLHttpRequest()
-	ajax.open("GET","productos.json")
+	ajax.open("GET", "productos.json")
 	ajax.onload = function(){
-			if(this.status == 200){//respuesta exitosa
+			if( this.status == 200 ){//respuesta exitosa
 
 					let productos = JSON.parse(this.response)
 
-					console.log
-					
+					console.log( productos)
+
 		}
 	}
 

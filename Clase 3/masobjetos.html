@@ -5,7 +5,7 @@
 	ajax.onload = function(){
 			if( this.status == 200 ){//respuesta exitosa
 
-					let productos = JSON.parse(this.response)
+					let productos = Producto.parse(this.response)
 
 					console.log( productos)
 

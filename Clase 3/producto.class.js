@@ -27,7 +27,7 @@ class Producto{
 
 	}
 	//3) metodos de clase o metodos estaticos
-	static parse(){
+	static parse(data){
 		console.log("Ahora debería convertir Object en Producto")
 		data = JSON.parse(data)
 

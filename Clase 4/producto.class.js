@@ -1,10 +1,15 @@
 class Producto{
 	//1) constructor
-	constructor(n, p, s, i){
-		this.Nombre = n
-		this.Precio = p
-		this.Stock = s
-		//this. Imagen = i
+	constructor(id, n, p, s, c, i, m, pr, d = false ){
+		this,idProducto = id
+		this.nombre = n
+		this.precio = p
+		this.stock = s
+		this.categoria = c
+		this.imagen = i
+		this.marca = m
+		this.presentacion = pr 
+		this.disponible = d
 	}
 
 	//2) metodos de instancia
@@ -35,14 +40,34 @@ class Producto{
 
 			let productos = new Array()
 			data.forEach(item => {
-				let producto = new Producto(item.Nombre, item.Precio, item.Stock, item.Imagen)
+				let producto = new Producto(
+
+					item.Producto,
+					item.Nombre,
+					item.Precio,
+					item.Stock,
+					item.Categoria,
+					item.Imagen,
+					item.Marca,
+					item.Presentacion
+					)
+
 				productos.push( producto )
 
 		})
 			return productos
 
 		} else if( data instanceof Object){// hay un solo object?
-			let producto = new Producto(data.Nombre, data.Precio, data.Stock, data.Imagen)
+			let producto = new Producto(
+					data.Producto,
+					data.Nombre,
+					data.Precio,
+					data.Stock,
+					data.Categoria,
+					data.Imagen,
+					data.Marca,
+					data.Presentacion
+				)
 			return producto
 		}else {// no hay ningun object (no sirve)
 			return null

@@ -1,10 +1,10 @@
 class Producto{
 	//1) constructor
-	constructor(n, p, s, d){
-		this.nombre = n
-		this.precio = p
-		this.stock = s
-		this. disponible = d
+	constructor(n, p, s, i){
+		this.Nombre = n
+		this.Precio = p
+		this.Stock = s
+		//this. Imagen = i
 	}
 
 	//2) metodos de instancia
@@ -12,9 +12,9 @@ class Producto{
 				let ficha = document.createElement("ul")
 
 				let contenido =
-								`<li>Nombre: ${this.nombre}</li>
-								<li>Precio: ARS${neto ? this.precio : this.precioBruto}</li>
-								<li>Stock: ${this.stock} unid.</li>
+								`<li>Nombre: ${this.Nombre}</li>
+								<li>Precio: ARS${neto ? this.Precio : this.precioBruto}</li>
+								<li>Stock: ${this.Stock} unid.</li>
 								<li>disponible: ${this.disponible ? "SI" : "NO"} </li>
 								`
 
@@ -35,14 +35,14 @@ class Producto{
 
 			let productos = new Array()
 			data.forEach(item => {
-				let producto = new Producto(item.nombre, item.precio, item.stock, item.disponible)
+				let producto = new Producto(item.Nombre, item.Precio, item.Stock, item.Imagen)
 				productos.push( producto )
 
 		})
 			return productos
 
 		} else if( data instanceof Object){// hay un solo object?
-			let producto = new Producto(data.nombre, data.precio, data.stock, data.disponible)
+			let producto = new Producto(data.Nombre, data.Precio, data.Stock, data.Imagen)
 			return producto
 		}else {// no hay ningun object (no sirve)
 			return null

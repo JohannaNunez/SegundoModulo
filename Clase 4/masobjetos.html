@@ -9,6 +9,11 @@
 					let productos = Producto.parse(this.response)
 
 					console.log( productos)
+
+					productos.forEach(function(item){ //callback - por cada item hace esto tantas veces como items haya en la coleccion
+						item.Mostrar()
+					}
+
 		}
 	}
 

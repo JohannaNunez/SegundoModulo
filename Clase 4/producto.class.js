@@ -1,7 +1,7 @@
 class Producto{
 	//1) constructor
 	constructor(id, n, p, s, c, i, m, pr, d = false ){
-		this,idProducto = id
+		this.idProducto = id
 		this.nombre = n
 		this.precio = p
 		this.stock = s

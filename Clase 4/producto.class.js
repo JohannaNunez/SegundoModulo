@@ -20,7 +20,7 @@ class Producto{
 								`<li>Nombre: ${this.Nombre}</li>
 								<li>Precio: ARS${neto ? this.Precio : this.precioBruto}</li>
 								<li>Stock: ${this.Stock} unid.</li>
-								<li>disponible: ${this.disponible ? "SI" : "NO"} </li>
+								<li>Disponible: ${this.Disponible ? "SI" : "NO"} </li>
 								`
 
 				ficha.innerHTML = contenido		

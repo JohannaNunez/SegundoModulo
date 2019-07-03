@@ -2,14 +2,14 @@ class Producto{
 	//1) constructor
 	constructor(id, n, p, s, c, i, m, pr, d = false ){
 		this.idProducto = id
-		this.nombre = n
-		this.precio = p
-		this.stock = s
-		this.categoria = c
-		this.imagen = i
-		this.marca = m
-		this.presentacion = pr 
-		this.disponible = d
+		this.Nombre = n
+		this.Precio = p
+		this.Stock = s
+		this.Categoria = c
+		this.Imagen = i
+		this.Marca = m
+		this.Presentacion = pr 
+		this.Disponible = d
 	}
 
 	//2) metodos de instancia
@@ -28,7 +28,7 @@ class Producto{
 				document.body.appendChild( ficha )
 	}
 	precioBruto(){
-		return (this.precio / 1.21).toFixed(2)
+		return (this.Precio / 1.21).toFixed(2)
 
 	}
 	//3) metodos de clase o metodos estaticos
@@ -42,7 +42,7 @@ class Producto{
 			data.forEach(item => {
 				let producto = new Producto(
 
-					item.Producto,
+					item.idProducto,
 					item.Nombre,
 					item.Precio,
 					item.Stock,

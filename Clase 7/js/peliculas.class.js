@@ -1,0 +1,84 @@
+class Pelicula{
+	//1) constructor
+	constructor(id, t, e, d, p, tr ){
+		this.idPelicula = id
+		this.Titulo = t
+		this.Estreno = e
+		this.Descripcion = d
+		this.Poster = p
+		this.Trailer = tr
+
+		}
+		//2) metodos de instancia
+	Mostrar(){
+		//1) capturar el elemento y guardarlo - clonarlo
+		let elemento = document.querySelector(".pelicula").cloneNode(true)
+		console.log(elemento)
+
+		//2) reemplazar/llenar con los datos de ESTA pelicula
+		//buscar dentro del elemento el espacio donde quiero mostrar el titulo,h4, y quiero reemplazarlo. Manipulacion de contenido
+		elemento.querySelector("h4").innerText = this.Titulo
+		elemento.querySelector("p").innerText = this.Estreno
+		elemento.querySelector("img").src= this.Poster
+
+		//3) desocultar el elemento clonado (removiendo la clase hide - manipulacion de estructura)
+		elemento.classList.remove("hide")
+
+		//4) anexar el elemento en el contenedor (padre)
+		document.querySelector("#peliculas").appendChild(elemento)//anexar
+
+			console.log(elemento)
+}
+	//3) metodos de clase o metodos estaticos
+	static parse(data){
+		console.log("Ahora debería convertir Object en Pelicula")
+		data = JSON.parse(data)
+	
+		if (data instanceof Array){ // hay muchos objetos?
+	/*VIEJA FORMA*/ /*
+			let peliculas = new Array()
+			data.forEach(item => {
+				let pelicula = new Pelicula(
+					item.idPelicula,
+					item.Titulo,
+					item.Estreno
+					item.Descripcion
+					item.Poster
+					item.Trailer
+					)
+				productos.push( pelicula )
+			})
+			return peliculas
+			*/
+			/*NUEVA FORMA*/ //en vez de foreach uso MAP()
+			return data.map(item => 
+					new Pelicula(
+					item.idPelicula,
+					item.Titulo,
+					item.Estreno,
+					item.Descripcion,
+					item.Poster,
+					item.Trailer
+				)
+			)
+
+		} else if( data instanceof Object){// hay un solo object?
+			let producto = new Pelicula(
+					data.idPelicula,
+					data.Titulo,
+					data.Estreno,
+					data.Descripcion,
+					data.Poster,
+					data.Trailer
+				)
+			return pelicula
+		}else {// no hay ningun object (no sirve)
+			return null
+		}
+
+	}
+}
+
+
+
+

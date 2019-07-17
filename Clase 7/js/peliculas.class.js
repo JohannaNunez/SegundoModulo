@@ -21,10 +21,31 @@ class Pelicula{
 		elemento.querySelector("p").innerText = this.Estreno
 		elemento.querySelector("img").src= this.Poster
 
-		//3) desocultar el elemento clonado (removiendo la clase hide - manipulacion de estructura)
+		//3) Generar el comportamiento de "reproductor" mediante un "closure" (capturar al hip y cuando le haga click, accion)
+			elemento.querySelector("a").onclick  = (evento) => {
+			evento.preventDefault() // se interrumpe el desplazamiento autom.
+
+
+			//el THIS es la pelicula!
+			console.log(this)
+			let reproductor = document.querySelector("#playMovie")
+
+			reproductor.querySelector("#titulo").innerText = `${this.Titulo} (${this.Estreno})`
+			reproductor.querySelector("#descripcion").innerText = this.Descripcion
+			reproductor.querySelector("#imagen").src = this.Poster
+			reproductor.querySelector("iframe").src = this.Trailer
+		
+		window.scroll ({			
+			behavior : "smooth",
+			top : reproductor.offsetTop
+		})
+	}
+		//elemento.querySelector("a").onclick = Reproductor.bind(this)
+
+		//4) desocultar el elemento clonado (removiendo la clase hide - manipulacion de estructura)
 		elemento.classList.remove("hide")
 
-		//4) anexar el elemento en el contenedor (padre)
+		//5) anexar el elemento en el contenedor (padre)
 		document.querySelector("#peliculas").appendChild(elemento)//anexar
 
 			console.log(elemento)

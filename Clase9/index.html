@@ -1,15 +1,12 @@
 <script>
-	
-	let ajax = new XMLHttpRequest()
-	ajax.open("GET", "https://api.myjson.com/bins/fiuhw")
-	ajax.onload = function(){
+	//AJAX desde ECMAScript 6
 
-		if( this.status == 200 ) {
-			let peliculas = JSON.parse ( this.response )
-
-			console.table ( peliculas )
-		}
-	}
-	ajax.send()
-
+	//capa 1 : Obtencion de datos
+	fetch("https://api.myjson.com/bins/fiuhw").then(function(data){
+		// capa 2: conversion de los datos
+		return data.json()
+	}).then(function(peliculas){
+		//capa 3: uso de los datos
+		console.table( peliculas )
+	})
 </script>

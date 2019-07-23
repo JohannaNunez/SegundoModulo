@@ -8,5 +8,11 @@
 	}).then(function(peliculas){
 		//capa 3: uso de los datos
 		console.table( peliculas )
-	})
+
+		return peliculas
+
+	}).then(function(datos){
+		datos.forEach( dato = > {console.log(dato)}) //recorro, guardo e imprimo
+
+	}
 </script>

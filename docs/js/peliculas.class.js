@@ -28,7 +28,7 @@ class Pelicula{
 			//el THIS es la pelicula!
 			console.log(this)
 
-		if( window.auth2-currentUser.get().isSignedIn() ) { // del modulo 2, obtener la info del usuario, ver si esta logueado
+		if( window.auth2.currentUser.get().isSignedIn() ) { // del modulo 2, obtener la info del usuario, ver si esta logueado
 			let reproductor = document.querySelector("#playMovie")
 
 			reproductor.querySelector("#titulo").innerText = `${this.Titulo} (${this.Estreno})`

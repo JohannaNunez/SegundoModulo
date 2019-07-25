@@ -28,7 +28,7 @@ class Pelicula{
 			//el THIS es la pelicula!
 			console.log(this)
 
-		if( window.auth2.currentUser.get().isSignedIn() ) { // del modulo 2, obtener la info del usuario, ver si esta logueado
+			if( window.auth2.currentUser.get().isSignedIn() ) { // del modulo 2, obtener la info del usuario, ver si esta logueado
 			let reproductor = document.querySelector("#playMovie")
 
 			reproductor.querySelector("#titulo").innerText = `${this.Titulo} (${this.Estreno})`
@@ -40,7 +40,7 @@ class Pelicula{
 			behavior : "smooth",
 			top : reproductor.offsetTop
 			})
-			
+
 			} else { //que se loguee el usuario
 			auth2.signIn().then(function(){
 				let usuario = auth2.currentUser.get().getBasicProfile()
@@ -48,6 +48,7 @@ class Pelicula{
 				alert(`Bienvenido ${usuario.getGivenName()}`)
 			})
 
+			}
 		}
 		//elemento.querySelector("a").onclick = Reproductor.bind(this)
 

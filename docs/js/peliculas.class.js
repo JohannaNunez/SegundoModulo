@@ -25,9 +25,10 @@ class Pelicula{
 			elemento.querySelector("a").onclick  = (evento) => {
 			evento.preventDefault() // se interrumpe el desplazamiento autom.
 
-
 			//el THIS es la pelicula!
 			console.log(this)
+
+		if( window.auth2-currentUser.get().isSignedIn() ) { // del modulo 2, obtener la info del usuario, ver si esta logueado
 			let reproductor = document.querySelector("#playMovie")
 
 			reproductor.querySelector("#titulo").innerText = `${this.Titulo} (${this.Estreno})`
@@ -35,11 +36,18 @@ class Pelicula{
 			reproductor.querySelector("#imagen").src = this.Poster
 			reproductor.querySelector("iframe").src = this.Trailer
 		
-		window.scroll ({			
+			window.scroll ({			
 			behavior : "smooth",
 			top : reproductor.offsetTop
-		})
-	}
+			})
+		} else { //que se loguee el usuario
+			auth2.signIn().then(function(){
+				let usuario = auth2.currentUser.get().getBasicProfile()
+
+				alert(`Bienvenido ${usuario.getGivenName()}`)
+			})
+
+		}
 		//elemento.querySelector("a").onclick = Reproductor.bind(this)
 
 		//4) desocultar el elemento clonado (removiendo la clase hide - manipulacion de estructura)

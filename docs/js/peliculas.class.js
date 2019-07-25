@@ -40,7 +40,8 @@ class Pelicula{
 			behavior : "smooth",
 			top : reproductor.offsetTop
 			})
-		} else { //que se loguee el usuario
+			
+			} else { //que se loguee el usuario
 			auth2.signIn().then(function(){
 				let usuario = auth2.currentUser.get().getBasicProfile()
 

@@ -13,7 +13,7 @@ class Pelicula{
 	Mostrar(){
 		//1) capturar el elemento y guardarlo - clonarlo
 		let elemento = document.querySelector(".pelicula").cloneNode(true)
-		console.log(elemento)
+		//console.log(elemento)
 
 		//2) reemplazar/llenar con los datos de ESTA pelicula
 		//buscar dentro del elemento el espacio donde quiero mostrar el titulo,h4, y quiero reemplazarlo. Manipulacion de contenido

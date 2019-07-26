@@ -48,7 +48,7 @@ class Pelicula{
 				document.querySelector("#user_data").classList.remove("hide") //lo muestro
 				document.querySelector("#user_data strong").innerText = usuario.getGivenName()
 				document.querySelector("#user_data button").onlick = function(){
-					auth2.singOut()
+					auth2.signOut()
 					document.querySelector("#user-data").classList.add("hide")
 				}
 			})

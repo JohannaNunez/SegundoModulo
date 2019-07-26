@@ -47,7 +47,7 @@ class Pelicula{
 
 				document.querySelector("#user-data").classList.remove("hide") //lo muestro
 				document.querySelector("#user-data strong").innerText = usuario.getGivenName()
-				document.querySelector("#user-data button").onlick = function(){
+				document.querySelector("#user-data button").onclick = function(){
 					auth2.signOut()
 					document.querySelector("#user-data").classList.add("hide")
 				}

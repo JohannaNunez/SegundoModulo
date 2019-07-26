@@ -45,9 +45,9 @@ class Pelicula{
 			auth2.signIn().then(function(){
 				let usuario = auth2.currentUser.get().getBasicProfile()
 
-				document.querySelector("#user_data").classList.remove("hide") //lo muestro
-				document.querySelector("#user_data strong").innerText = usuario.getGivenName()
-				document.querySelector("#user_data button").onlick = function(){
+				document.querySelector("#user-data").classList.remove("hide") //lo muestro
+				document.querySelector("#user-data strong").innerText = usuario.getGivenName()
+				document.querySelector("#user-data button").onlick = function(){
 					auth2.signOut()
 					document.querySelector("#user-data").classList.add("hide")
 				}
